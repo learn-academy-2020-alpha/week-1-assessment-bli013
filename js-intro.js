@@ -128,7 +128,7 @@ console.log(kittyOnly(toonimals));
 // create a function called nameNoCats that takes in the array toonimals and returns the name of non cat animals
 
 const nameNoCats = (ncat) => {
-  let newArr2 = ncat.filter(el => el.animal !== "cat")
+  let newArr2 = ncat.filter(el => el.animal !== "cat").map(el => el.name)
   return newArr2
 }
 //I can get results to print out the name and animal type of the non cats but seem to be lost on how to just print just the names.
