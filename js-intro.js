@@ -60,20 +60,20 @@ console.log(newArr);
 // --------------------4) Create a function that removes all the vowels from a string.
 // Use the test variables provided below. Expected output: "HyThrLrnStdnt" "LvJvScrpt"
 
-// var stringWithVowels1 = "HeyThereLearnStudent"
-// var stringWithVowels2 = "ILoveJavaScript"
-// // creating a function called noVowels
-// // create a newArr w/ vowels ["a","e","i","o","u"]
-// noVowels = (thing) => {
-//   let vowels = ["a","e","i","o","u"]
-//   // using .split to get string into individual ""'s, filter the string for just vowels
-//   return thing.split("").filter(function(el) {
-//     //brings back the vowels and string, and subtract out the vowels from joined string
-//     return vowels.indexOf(el.toLowerCase()) == -1;
-//   }).join("");
-// }
-// console.log(noVowels(stringWithVowels1));
-// console.log(noVowels(stringWithVowels2));
+var stringWithVowels1 = "HeyThereLearnStudent"
+var stringWithVowels2 = "ILoveJavaScript"
+// creating a function called noVowels
+// create a newArr w/ vowels ["a","e","i","o","u"]
+noVowels = (thing) => {
+  let vowels = ["a","e","i","o","u"]
+  // using .split to get string into individual ""'s, filter the string for just vowels
+  return thing.split("").filter(function(el) {
+    //brings back the vowels and string, and subtract out the vowels from joined string
+    return vowels.indexOf(el.toLowerCase()) == -1;
+  }).join("");
+}
+console.log(noVowels(stringWithVowels1));
+console.log(noVowels(stringWithVowels2));
 
 
 
@@ -83,28 +83,30 @@ console.log(newArr);
 
 // copy code of #4 from above
 
-var notAString1 = true
-var notAString2 = 42
-var boo = typeof (true)
-var num = typeof (1)
-var str = typeof ("string")
-//THE START OF COPIED CODE//////////////////////////
-function noVowels(thing) {
-  let vowels = ["a","e","i","o","u"]
-  // condition for if !== string is typed using typeOf
-  if (thing === boo || num)
-    return `${thing}, is not a string.`
-  else if (thing === str){
-  // using .split to get string into individual ""'s, filter the string for just vowels
-    return thing.split("").filter(function(el) {
-      //brings back the vowels and string, and subtract out the vowels from joined string
-      return vowels.indexOf(el.toLowerCase()) == -1;
-    }).join("");
-  }
-}
-// THE END OF COPIED CODE///////////////////////////
-console.log(noVowels(notAString1));
-console.log(noVowels(notAString2));
+//this code is commented out because #4 and #5 will not run together but will both work and run seperatly. Not sure why
+
+// var notAString1 = true
+// var notAString2 = 42
+// var boo = typeof (true)
+// var num = typeof (1)
+// var str = typeof ("string")
+// //THE START OF COPIED CODE//////////////////////////
+// function noVowels(thing) {
+//   let vowels = ["a","e","i","o","u"]
+//   // condition for if !== string is typed using typeOf
+//   if (thing === boo || num)
+//     return `${thing}, is not a string.`
+//   else if (thing === str){
+//   // using .split to get string into individual ""'s, filter the string for just vowels
+//     return thing.split("").filter(function(el) {
+//       //brings back the vowels and string, and subtract out the vowels from joined string
+//       return vowels.indexOf(el.toLowerCase()) == -1;
+//     }).join("");
+//   }
+// }
+// // THE END OF COPIED CODE///////////////////////////
+// console.log(noVowels(notAString1));
+// console.log(noVowels(notAString2));
 
 
 
@@ -126,14 +128,10 @@ console.log(kittyOnly(toonimals));
 // Expected output: "Itchy" "Daffy" "Ren"
 
 // create a function called nameNoCats that takes in the array toonimals and returns the name of non cat animals
+// using a new array and returning with .filter from last problem and also .map() method to only return the names.
 
 const nameNoCats = (ncat) => {
   let newArr2 = ncat.filter(el => el.animal !== "cat").map(el => el.name)
   return newArr2
 }
-//I can get results to print out the name and animal type of the non cats but seem to be lost on how to just print just the names.
-// considered using deconstruction method but not sure how to set up witht the way the new array was set up...
 console.log(nameNoCats(toonimals));
-// let newArr2 = [name1, animal1]
-// // console.log(nameOnly(toonimals))
-// console.log(newArr2[i=2](toonimals));
