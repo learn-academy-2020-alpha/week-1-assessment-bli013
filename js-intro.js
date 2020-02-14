@@ -10,7 +10,22 @@
 var temp1 = 35
 var temp2 = 350
 var temp3 = 212
-
+//create function called hotOrNot with 3 args: belowBoil,boil,overBoil
+hotOrNot = (temp) => {
+  //below boil
+  if (temp < 212){
+    return `${temp} is below boiling point`
+  }//above boil
+  else if (temp > 212){
+    return `${temp} is above boiling point`
+  }//boiling
+  else if (temp === 212){
+    return `${temp} is at boiling point`
+  }
+}
+console.log(hotOrNot(temp1))
+console.log(hotOrNot(temp2))
+console.log(hotOrNot(temp3))
 
 
 
@@ -18,7 +33,15 @@ var temp3 = 212
 // Use the test variable provided below. Expected outcome: [15, 35, 0, 30, -45]
 
 var myNumbers1 = [3, 7, 0, 6, -9]
-
+// create a function called mult5 using forloop
+const mult5 = (arr) => {
+  let newArr = []
+  for(let i=0; i < arr.length; i++){
+    newArr.push(arr[i] * 5)
+  }
+  return newArr
+}
+console.log(mult5(myNumbers1));
 
 
 
@@ -26,6 +49,10 @@ var myNumbers1 = [3, 7, 0, 6, -9]
 // Use the test variable provided below. Expected outcome: [40, -35, 0, 30, 10]
 
 var myNumbers2 = [8, -7, 0, 6, 2]
+//creating a function using .map()
+// create newArr
+var newArr = myNumbers2.map(el => el * 5)
+console.log(newArr);
 
 
 
@@ -35,7 +62,18 @@ var myNumbers2 = [8, -7, 0, 6, 2]
 
 var stringWithVowels1 = "HeyThereLearnStudent"
 var stringWithVowels2 = "ILoveJavaScript"
-
+// creating a function called noVowels
+// create a newArr w/ vowels ["a","e","i","o","u"]
+noVowels = (thing) => {
+  let vowels = ["a","e","i","o","u"]
+  // using .split to get string into individual ""'s, filter the string for just vowels
+  return thing.split("").filter(function(el) {
+    //brings back the vowels and string, and subtract out the vowels from joined string
+    return vowels.indexOf(el.toLowerCase()) == -1;
+  }).join("");
+}
+console.log(noVowels(stringWithVowels1));
+console.log(noVowels(stringWithVowels2));
 
 
 
@@ -43,19 +81,57 @@ var stringWithVowels2 = "ILoveJavaScript"
 // --------------------5) Expand the logic from #4 to inform your user if the variable passed into the vowel removal function is not a string.
 // Copy and paste or rewrite the function. Use the test variables provided below.
 
-var notAString1 = true
-var notAString2 = 42
+// copy code of #4 from above
 
+//this code is commented out because #4 and #5 will not run together but will both work and run seperatly. Not sure why
+
+// var notAString1 = true
+// var notAString2 = 42
+// var boo = typeof (true)
+// var num = typeof (1)
+// var str = typeof ("string")
+// //THE START OF COPIED CODE//////////////////////////
+// function noVowels(thing) {
+//   let vowels = ["a","e","i","o","u"]
+//   // condition for if !== string is typed using typeOf
+//   if (thing === boo || num)
+//     return `${thing}, is not a string.`
+//   else if (thing === str){
+//   // using .split to get string into individual ""'s, filter the string for just vowels
+//     return thing.split("").filter(function(el) {
+//       //brings back the vowels and string, and subtract out the vowels from joined string
+//       return vowels.indexOf(el.toLowerCase()) == -1;
+//     }).join("");
+//   }
+// }
+// // THE END OF COPIED CODE///////////////////////////
+// console.log(noVowels(notAString1));
+// console.log(noVowels(notAString2));
 
 
 
 // --------------------6) Create a function that takes the toonimals array and returns an array with only the toon objects that are cats.
 // Expected output: [ { name: "Stimpy", animal: "cat" }, { name: "Scratchy", animal: "cat" }, { name: "Felix", animal: "cat" } ]
 
-
+// create a new var called kittyOnly that returns cats only using the .filter() method
 var toonimals = [ {name: "Itchy", animal: "mouse"}, {name: "Stimpy", animal: "cat"}, {name: "Daffy", animal: "duck"}, {name: "Scratchy", animal: "cat"}, {name: "Ren", animal: "dog"}, {name: "Felix", animal: "cat"}]
 
+const kittyOnly = (ani) => {
+  let newArr1 = [ani.filter(el => el.animal === "cat")]
+  return newArr1
+
+}
+console.log(kittyOnly(toonimals));
 
 
 // --------------------7) Using the toonimals variable from #6, create a function that returns only the names of the non-cats.
 // Expected output: "Itchy" "Daffy" "Ren"
+
+// create a function called nameNoCats that takes in the array toonimals and returns the name of non cat animals
+// using a new array and returning with .filter from last problem and also .map() method to only return the names.
+
+const nameNoCats = (ncat) => {
+  let newArr2 = ncat.filter(el => el.animal !== "cat").map(el => el.name)
+  return newArr2
+}
+console.log(nameNoCats(toonimals));
